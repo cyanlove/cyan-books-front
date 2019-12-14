@@ -1,5 +1,12 @@
 import React from "react";
+import Header from "./common/Header";
+import HomePage from "./home/HomePage";
 
-const App = () => <h1>CYAN BOOKS</h1>;
+const App = () => (
+	<>
+		<Header />
+		<HomePage />
+	</>
+);
 
 export default App;
