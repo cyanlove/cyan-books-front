@@ -1,9 +1,11 @@
+import * as types from "./actionTypes";
+
 export function addBookSuccess(book) {
-	return { type: "ADD_BOOK", book };
+	return { type: types.ADD_BOOK, book };
 }
 
 export function loadBooksSuccess(books) {
-	return { type: "LOAD_BOOKS_SUCCESS", books };
+	return { type: types.LOAD_BOOKS_SUCCESS, books };
 }
 
 export function loadBooks() {
