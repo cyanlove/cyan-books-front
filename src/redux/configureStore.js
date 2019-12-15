@@ -2,6 +2,7 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./reducers";
 import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
+import thunk from "redux-thunk";
 
 function configureStore(initialState) {
 	//add support for redux dev tools (browser)
@@ -10,10 +11,10 @@ function configureStore(initialState) {
 
 	//redux middleware is a way to enhance Redux's behavior.
 	//Just like help with async calls or force immutable state (safety net)
-	createStore(
-		initialState,
+	return createStore(
 		rootReducer,
-		composeEnhancers(applyMiddleware(reduxImmutableStateInvariant()))
+		initialState,
+		composeEnhancers(applyMiddleware(thunk, reduxImmutableStateInvariant()))
 	);
 }
 
