@@ -1,7 +1,11 @@
 {
 	"name": "cyan-books-front",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Cyan Books App",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cyanlove/cyan-books-front"
+	},
 	"scripts": {
 		"start": "run-p start:dev start:api",
 		"start:dev": "webpack-dev-server --config webpack.config.dev.js --port 3000",
