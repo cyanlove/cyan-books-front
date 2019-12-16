@@ -1,82 +1,82 @@
 const books = [
 	{
 		id: 1,
-		title: "Securing React Apps with Auth0",
-		slug: "react-auth0-authentication-security",
+		title: "Pol Colomo y sus amigos",
+		slug: "pol-colomo-y-sus-amigos",
 		authorId: 1,
-		category: "JavaScript",
+		genre: "Children",
 		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
 	},
 	{
 		id: 2,
-		title: "React: The Big Picture",
-		slug: "react-big-picture",
+		title: "Vida y Azañas de Pol Colomo",
+		slug: "vida-y-azañas-de-pol-colomo",
 		authorId: 1,
-		category: "JavaScript",
+		genre: "Biography",
 		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
 	},
 	{
 		id: 3,
-		title: "Creating Reusable React Components",
-		slug: "react-creating-reusable-components",
+		title: "Cuando Pol Colomo entra en tu vida",
+		slug: "cuando-pol-colomo-entra-en-tu-vida",
 		authorId: 1,
-		category: "JavaScript",
+		genre: "Philosophy",
 		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
 	},
 	{
 		id: 4,
-		title: "Building a JavaScript Development Environment",
-		slug: "javascript-development-environment",
+		title: "¿Por qué Pol Colomo y no Juan Palomo?",
+		slug: "por-que-pol-colomo-y-no-juan-palomo",
 		authorId: 1,
-		category: "JavaScript",
+		genre: "Cooking",
 		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
 	},
 	{
 		id: 5,
-		title: "Building Applications with React and Redux",
-		slug: "react-redux-react-router-es6",
+		title: "Pol Colomo, solamente",
+		slug: "pol-colomo-solamente",
 		authorId: 1,
-		category: "JavaScript",
+		genre: "Poetry",
 		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
 	},
 	{
 		id: 6,
-		title: "Building Applications in React and Flux",
-		slug: "react-flux-building-applications",
+		title: "|*()|_ {()|_()|`´|(), el hacker",
+		slug: "pol-colomo-el-hacker",
 		authorId: 1,
-		category: "JavaScript",
+		genre: "Software",
 		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
 	},
 	{
 		id: 7,
-		title: "Clean Code: Writing Code for Humans",
-		slug: "writing-clean-code-humans",
+		title: "Un nuevo caso para: Pol Colom(b)o",
+		slug: "un-nuevo-caso-para-pol-colombo",
 		authorId: 1,
-		category: "Software Practices",
+		genre: "Crime",
 		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
 	},
 	{
 		id: 8,
-		title: "Architecting Applications for the Real World",
-		slug: "architecting-applications-dotnet",
+		title: "¿Qué come Pol Colomo?",
+		slug: "que-come-pol-colomo",
 		authorId: 1,
-		category: "Software Architecture",
+		genre: "Suspense",
 		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
 	},
 	{
 		id: 9,
-		title: "Becoming an Outlier: Reprogramming the Developer Mind",
-		slug: "career-reboot-for-developer-mind",
+		title: "Conviértete en maestro del póker con Pol Colomo",
+		slug: "conviertete-en-maestro-del-poker-con-pol-colomo",
 		authorId: 1,
-		category: "Career",
+		genre: "Self help",
 		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
 	},
 	{
 		id: 10,
-		title: "Web Component Fundamentals",
-		slug: "web-components-shadow-dom",
+		title: "Pol Colomo Fundamentals",
+		slug: "pol-colomo-fundamentals",
 		authorId: 1,
-		category: "HTML5",
+		genre: "Encyclopedia",
 		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
 	}
 ];

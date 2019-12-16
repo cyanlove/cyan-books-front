@@ -1,4 +1,5 @@
 import * as types from "./actionTypes";
+import * as bookApi from "../../api/bookApi";
 
 export function addBookSuccess(book) {
 	return { type: types.ADD_BOOK, book };
@@ -10,14 +11,14 @@ export function loadBooksSuccess(books) {
 
 export function loadBooks() {
 	return dispatch => {
-		return dispatch(
-			loadBooksSuccess([
-				{ title: "Pol Colomo y sus amigos" },
-				{ title: "Vida y Azañas de Pol Colomo" },
-				{ title: "Cuando Pol Colomo entra en tu vida" },
-				{ title: "¿Por qué Pol Colomo y no Juan Palomo?" },
-				{ title: "Pol Colomo, solamente" }
-			])
-		);
+		return bookApi
+			.getBooks()
+			.then(books => {
+				dispatch(loadBooksSuccess(books));
+			})
+			.catch(e => {
+				//we could dispatch one other appropiate action to let the app know the request failed... but for now... lets keep it this easier way :)
+				throw e;
+			});
 	};
 }
