@@ -3,6 +3,7 @@ import BooksList from "../books/BooksList";
 import * as bookActions from "../../redux/actions/bookActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import "./css/homePage.css";
 
 const HomePage = ({ books, loadBooks }) => {
 	useEffect(() => {
@@ -13,7 +14,7 @@ const HomePage = ({ books, loadBooks }) => {
 
 	return (
 		<>
-			<h1>Home Page</h1>
+			<h3 className="sectionTitle">books shelf</h3>
 			<BooksList books={books} />
 		</>
 	);

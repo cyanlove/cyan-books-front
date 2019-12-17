@@ -1,0 +1,8 @@
+:root {
+	--main-title: rgb(0, 180, 180);
+}
+
+.sectionTitle {
+	text-align: center;
+	color: var(--main-title);
+}
