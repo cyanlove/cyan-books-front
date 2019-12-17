@@ -1,8 +1,26 @@
 :root {
-	--main-title: rgb(0, 180, 180);
+	--main-link: rgb(0, 180, 180);
+	--main-sectionTitle: rgb(0, 180, 180);
+
+	/*genre colors*/
+	--genre-children: rgb(255, 163, 88);
+	--genre-biography: rgb(161, 221, 82);
+	--genre-philosophy: rgb(255, 113, 88);
+	--genre-cooking: rgb(160, 88, 255);
+	--genre-poetry: rgb(141, 104, 141);
+	--genre-software: rgb(117, 78, 40);
+	--genre-crime: rgb(100, 102, 88);
+	--genre-suspense: rgb(179, 70, 70);
+	--genre-selfhelp: rgb(87, 196, 255);
+	--genre-encyclopedia: rgb(45, 182, 136);
+	/*------------*/
 }
 
 .sectionTitle {
 	text-align: center;
-	color: var(--main-title);
+	color: var(--main-sectionTitle);
+}
+
+a {
+	color: var(--main-link);
 }

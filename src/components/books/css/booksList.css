@@ -1,0 +1,137 @@
+.bookListItem {
+	display: grid;
+	grid-template-areas: "title genre" "author author";
+	padding: 15px;
+}
+
+.bookListItemGenre {
+	grid-area: genre;
+	color: rgb(184, 184, 184);
+	border-color: rgb(184, 184, 184);
+	margin-left: auto;
+}
+
+.bookListItemGenre:hover {
+	background-color: rgb(184, 184, 184);
+	border-color: rgb(184, 184, 184);
+	color: white !important;
+}
+
+.bookListItemTitle {
+	grid-area: title;
+	font-size: 1.2rem;
+}
+
+.bookListItemAuthor {
+	grid-area: author;
+}
+
+.genreColorPhilosophy {
+	color: var(--genre-philosophy) !important;
+	border-color: var(--genre-philosophy) !important;
+}
+
+.genreColorPhilosophy:hover {
+	background-color: var(--genre-philosophy) !important;
+	border-color: var(--genre-philosophy) !important;
+}
+
+.genreColorChildren {
+	color: var(--genre-children) !important;
+	border-color: var(--genre-children) !important;
+}
+
+.genreColorChildren:hover {
+	background-color: var(--genre-children) !important;
+	border-color: var(--genre-children) !important;
+}
+
+.genreColorBiography {
+	color: var(--genre-biography) !important;
+	border-color: var(--genre-biography) !important;
+}
+
+.genreColorBiography:hover {
+	background-color: var(--genre-biography) !important;
+	border-color: var(--genre-biography) !important;
+}
+
+.genreColorCooking {
+	color: var(--genre-cooking) !important;
+	border-color: var(--genre-cooking) !important;
+}
+
+.genreColorCooking:hover {
+	background-color: var(--genre-cooking) !important;
+	border-color: var(--genre-cooking) !important;
+}
+
+.genreColorPoetry {
+	color: var(--genre-poetry) !important;
+	border-color: var(--genre-poetry) !important;
+}
+
+.genreColorPoetry:hover {
+	background-color: var(--genre-poetry) !important;
+	border-color: var(--genre-poetry) !important;
+}
+
+.genreColorPoetry {
+	color: var(--genre-poetry) !important;
+	border-color: var(--genre-poetry) !important;
+}
+
+.genreColorPoetry:hover {
+	background-color: var(--genre-poetry) !important;
+	border-color: var(--genre-poetry) !important;
+}
+
+.genreColorSoftware {
+	color: var(--genre-software) !important;
+	border-color: var(--genre-software) !important;
+}
+
+.genreColorSoftware:hover {
+	background-color: var(--genre-software) !important;
+	border-color: var(--genre-software) !important;
+}
+
+.genreColorCrime {
+	color: var(--genre-crime) !important;
+	border-color: var(--genre-crime) !important;
+}
+
+.genreColorCrime:hover {
+	background-color: var(--genre-crime) !important;
+	border-color: var(--genre-crime) !important;
+}
+
+.genreColorSuspense {
+	color: var(--genre-suspense) !important;
+	border-color: var(--genre-suspense) !important;
+}
+
+.genreColorSuspense:hover {
+	background-color: var(--genre-suspense) !important;
+	border-color: var(--genre-suspense) !important;
+}
+
+.genreColorSelfhelp {
+	color: var(--genre-selfhelp) !important;
+	border-color: var(--genre-selfhelp) !important;
+}
+
+.genreColorSelfhelp:hover {
+	background-color: var(--genre-selfhelp) !important;
+	border-color: var(--genre-selfhelp) !important;
+}
+
+.genreColorEncyclopedia {
+	color: var(--genre-encyclopedia) !important;
+	border-color: var(--genre-encyclopedia) !important;
+}
+
+.genreColorEncyclopedia:hover {
+	background-color: var(--genre-encyclopedia) !important;
+	border-color: var(--genre-encyclopedia) !important;
+}
