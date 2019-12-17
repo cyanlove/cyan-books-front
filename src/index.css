@@ -24,3 +24,9 @@
 a {
 	color: var(--main-link);
 }
+
+#app {
+	max-width: 750px;
+	min-width: 450px;
+	margin: auto;
+}

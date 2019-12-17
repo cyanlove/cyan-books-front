@@ -3,6 +3,11 @@
 	flex-flow: row nowrap;
 	justify-content: space-evenly;
 	align-items: center;
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 0;
+	z-index: 99;
+	background-color: white;
 }
 .headerLogo {
 	width: 50px;
