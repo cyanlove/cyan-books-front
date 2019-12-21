@@ -6,7 +6,7 @@ const books = [
 		authorId: 1,
 		author: "Jaco Baldrich",
 		genre: "Children",
-		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
+		cover: "https://www.polcolomo.com/assets/img/pol-bg-home-mbl.png"
 	},
 	{
 		id: 2,
@@ -15,7 +15,7 @@ const books = [
 		authorId: 2,
 		author: "Pol Colomo",
 		genre: "Biography",
-		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
+		cover: "https://www.polcolomo.com/assets/img/pol-bg-home-mbl.png"
 	},
 	{
 		id: 3,
@@ -24,7 +24,7 @@ const books = [
 		authorId: 1,
 		author: "Jaco Baldrich",
 		genre: "Philosophy",
-		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
+		cover: "https://www.polcolomo.com/assets/img/pol-bg-home-mbl.png"
 	},
 	{
 		id: 4,
@@ -33,7 +33,7 @@ const books = [
 		authorId: 3,
 		author: "Uri Ustrell",
 		genre: "Cooking",
-		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
+		cover: "https://www.polcolomo.com/assets/img/pol-bg-home-mbl.png"
 	},
 	{
 		id: 5,
@@ -42,7 +42,7 @@ const books = [
 		authorId: 2,
 		author: "Pol Colomo",
 		genre: "Poetry",
-		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
+		cover: "https://www.polcolomo.com/assets/img/pol-bg-home-mbl.png"
 	},
 	{
 		id: 6,
@@ -51,7 +51,7 @@ const books = [
 		authorId: 3,
 		author: "Uri Ustrell",
 		genre: "Software",
-		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
+		cover: "https://www.polcolomo.com/assets/img/pol-bg-home-mbl.png"
 	},
 	{
 		id: 7,
@@ -60,7 +60,7 @@ const books = [
 		authorId: 1,
 		author: "Jaco Baldrich",
 		genre: "Crime",
-		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
+		cover: "https://www.polcolomo.com/assets/img/pol-bg-home-mbl.png"
 	},
 	{
 		id: 8,
@@ -69,7 +69,7 @@ const books = [
 		authorId: 1,
 		author: "Jaco Baldrich",
 		genre: "Suspense",
-		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
+		cover: "https://www.polcolomo.com/assets/img/pol-bg-home-mbl.png"
 	},
 	{
 		id: 9,
@@ -78,7 +78,7 @@ const books = [
 		authorId: 2,
 		author: "Pol Colomo",
 		genre: "Self help",
-		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
+		cover: "https://www.polcolomo.com/assets/img/pol-bg-home-mbl.png"
 	},
 	{
 		id: 10,
@@ -87,7 +87,7 @@ const books = [
 		authorId: 3,
 		author: "Uri Ustrell",
 		genre: "Encyclopedia",
-		photo: "https://https://polcolomo.com/assets/img/pol-home-leftblack.png"
+		cover: "https://www.polcolomo.com/assets/img/pol-bg-home-mbl.png"
 	}
 ];
 
@@ -95,8 +95,10 @@ const newBook = {
 	id: null,
 	title: "",
 	authorId: null,
-	category: "",
-	photo: ""
+	author: "",
+	slug: "",
+	genre: "",
+	cover: ""
 };
 
 // Using CommonJS style export so we can consume via Node (without using Babel-node)

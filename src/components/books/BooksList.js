@@ -8,6 +8,10 @@ const BooksList = ({ books }) => {
 		<ul className="list-group">
 			{books.map(book => (
 				<li key={book.id} className="list-group-item bookListItem">
+					<div
+						className="bookListCover"
+						style={{ backgroundImage: `url(${book.cover})` }}
+					></div>
 					<a
 						className="bookListItemTitle"
 						href={`/books/${book.slug}`}

@@ -1,7 +1,14 @@
 .bookListItem {
 	display: grid;
-	grid-template-areas: "title genre" "author author";
+	grid-template-areas: "cover title title" "cover author genre";
+	grid-template-columns: 1fr 5fr 2fr;
 	padding: 15px;
+}
+
+.bookListCover {
+	grid-area: cover;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 .bookListItemGenre {
