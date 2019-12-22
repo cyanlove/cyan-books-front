@@ -20,8 +20,8 @@ const SearchBox = ({ initFilter = "", applyFilter }) => {
 				id="searchBox"
 				value={filter}
 				className="form-control"
-				placeholder="search book..."
-				aria-label="search book..."
+				placeholder="search books..."
+				aria-label="search books..."
 				aria-describedby="button-addon2"
 				onChange={e => handleSearch(e.target.value)}
 			/>
