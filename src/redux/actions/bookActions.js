@@ -29,7 +29,7 @@ export function applyFilter(filter) {
 
 	if (!field) return filterByAll(filter);
 
-	const match = filter.slice(i + 1).toLowerCase();
+	const match = filter.slice(i + 1);
 
 	switch (field) {
 		case "title":

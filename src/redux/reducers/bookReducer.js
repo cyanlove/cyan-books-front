@@ -1,4 +1,5 @@
 import * as types from "../actions/actionTypes";
+import { matchTwoStrings } from "../../../tools/cyanUtils";
 
 export default function bookReducer(state = [], action) {
 	//if you check out redux docs, there are multiple ways to handle this, but switch statement is the most common
@@ -10,10 +11,10 @@ export default function bookReducer(state = [], action) {
 		case types.FILTER_BOOKS:
 			return state.map(book => {
 				if (
-					book.title.toLowerCase().indexOf(action.match) > -1 ||
-					book.author.toLowerCase().indexOf(action.match) > -1 ||
-					book.genre.toLowerCase().indexOf(action.match) > -1 ||
-					`${book.id}`.toLowerCase().indexOf(action.match) > -1
+					matchTwoStrings(book.title, action.match) ||
+					matchTwoStrings(book.author, action.match) ||
+					matchTwoStrings(book.genre, action.match) ||
+					matchTwoStrings(`${book.id}`, action.match)
 				) {
 					return { ...book, match: true };
 				} else {
@@ -22,7 +23,7 @@ export default function bookReducer(state = [], action) {
 			});
 		case types.FILTER_BOOKS_BY_TITLE:
 			return state.map(book => {
-				if (book.title.toLowerCase().indexOf(action.match) > -1) {
+				if (matchTwoStrings(book.title, action.match)) {
 					return { ...book, match: true };
 				} else {
 					return { ...book, match: false };
@@ -30,7 +31,7 @@ export default function bookReducer(state = [], action) {
 			});
 		case types.FILTER_BOOKS_BY_AUTHOR:
 			return state.map(book => {
-				if (book.author.toLowerCase().indexOf(action.match) > -1) {
+				if (matchTwoStrings(book.author, action.match)) {
 					return { ...book, match: true };
 				} else {
 					return { ...book, match: false };
@@ -38,7 +39,7 @@ export default function bookReducer(state = [], action) {
 			});
 		case types.FILTER_BOOKS_BY_GENRE:
 			return state.map(book => {
-				if (book.genre.toLowerCase().indexOf(action.match) > -1) {
+				if (matchTwoStrings(book.genre, action.match)) {
 					return { ...book, match: true };
 				} else {
 					return { ...book, match: false };
@@ -46,7 +47,7 @@ export default function bookReducer(state = [], action) {
 			});
 		case types.FILTER_BOOKS_BY_ISBN:
 			return state.map(book => {
-				if (`${book.id}`.indexOf(action.match) > -1) {
+				if (matchTwoStrings(`${book.id}`, action.match)) {
 					return { ...book, match: true };
 				} else {
 					return { ...book, match: false };
