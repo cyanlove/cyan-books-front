@@ -17,7 +17,7 @@ export function filterByAuthor(match) {
 	return { type: types.FILTER_BOOKS_BY_AUTHOR, match };
 }
 export function filterByGenre(match) {
-	return { type: types.FILTER_BOOKS_BY_TITLE, match };
+	return { type: types.FILTER_BOOKS_BY_GENRE, match };
 }
 export function filterByISBN(match) {
 	return { type: types.FILTER_BOOKS_BY_ISBN, match };
