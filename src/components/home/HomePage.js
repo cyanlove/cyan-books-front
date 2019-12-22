@@ -7,7 +7,10 @@ import "./css/homePage.css";
 
 const HomePage = ({ books, loadBooks }) => {
 	useEffect(() => {
-		if (books.length === 0) {
+		if (
+			books.length === 0 &&
+			document.querySelector("#searchBox").value.length === 0
+		) {
 			loadBooks();
 		}
 	});
@@ -22,8 +25,7 @@ const HomePage = ({ books, loadBooks }) => {
 
 HomePage.propTypes = {
 	books: PropTypes.array.isRequired,
-	loadBooks: PropTypes.func.isRequired,
-	props: PropTypes.object
+	loadBooks: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state /*, ownProps */) {
