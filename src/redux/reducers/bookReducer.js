@@ -7,53 +7,48 @@ export default function bookReducer(state = [], action) {
 		case types.ADD_BOOK:
 			return [...state, { ...action.book }];
 		case types.LOAD_BOOKS_SUCCESS:
-			return action.books.map(book => ({ ...book, match: true }));
+			return action.books.map(book => ({ ...book, visible: true }));
 		case types.FILTER_BOOKS:
-			return state.map(book => {
-				if (
+			return state.map(book => ({
+				...book,
+				...setVisibilityProp(
 					matchTwoStrings(book.title, action.match) ||
-					matchTwoStrings(book.author, action.match) ||
-					matchTwoStrings(book.genre, action.match) ||
-					matchTwoStrings(`${book.id}`, action.match)
-				) {
-					return { ...book, match: true };
-				} else {
-					return { ...book, match: false };
-				}
-			});
+						matchTwoStrings(book.author, action.match) ||
+						matchTwoStrings(book.genre, action.match) ||
+						matchTwoStrings(`${book.id}`, action.match)
+				)
+			}));
 		case types.FILTER_BOOKS_BY_TITLE:
-			return state.map(book => {
-				if (matchTwoStrings(book.title, action.match)) {
-					return { ...book, match: true };
-				} else {
-					return { ...book, match: false };
-				}
-			});
+			return state.map(book => ({
+				...book,
+				...setVisibilityProp(matchTwoStrings(book.title, action.match))
+			}));
 		case types.FILTER_BOOKS_BY_AUTHOR:
-			return state.map(book => {
-				if (matchTwoStrings(book.author, action.match)) {
-					return { ...book, match: true };
-				} else {
-					return { ...book, match: false };
-				}
-			});
+			return state.map(book => ({
+				...book,
+				...setVisibilityProp(matchTwoStrings(book.author, action.match))
+			}));
 		case types.FILTER_BOOKS_BY_GENRE:
-			return state.map(book => {
-				if (matchTwoStrings(book.genre, action.match)) {
-					return { ...book, match: true };
-				} else {
-					return { ...book, match: false };
-				}
-			});
+			return state.map(book => ({
+				...book,
+				...setVisibilityProp(matchTwoStrings(book.genre, action.match))
+			}));
 		case types.FILTER_BOOKS_BY_ISBN:
-			return state.map(book => {
-				if (matchTwoStrings(`${book.id}`, action.match)) {
-					return { ...book, match: true };
-				} else {
-					return { ...book, match: false };
-				}
-			});
+			return state.map(book => ({
+				...book,
+				...setVisibilityProp(
+					matchTwoStrings(`${book.id}`, action.match)
+				)
+			}));
 		default:
 			return state;
 	}
 }
+
+const setVisibilityProp = condition => {
+	if (condition) {
+		return { visible: true };
+	} else {
+		return { visible: false };
+	}
+};

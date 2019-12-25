@@ -7,7 +7,7 @@ const BooksList = ({ books }) => {
 	return (
 		<ul className="list-group">
 			{books.map(book => {
-				if (book.match)
+				if (book.visible)
 					return (
 						<li
 							key={book.id}
