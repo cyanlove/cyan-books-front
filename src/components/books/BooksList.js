@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./css/booksList.css";
 import EllipsisText from "react-ellipsis-text";
 import { Link } from "react-router-dom";
+import GenreButton from "../genre/GenreButton";
 
 const BooksList = ({ books }) => {
 	return (
@@ -31,15 +32,7 @@ const BooksList = ({ books }) => {
 									tooltip={book.title}
 								/>
 							</Link>
-							<button
-								type="button"
-								className={`btn btn-outline-primary btn-sm bookListItemGenre genreColor${book.genre.replace(
-									" ",
-									""
-								)}`}
-							>
-								{book.genre}
-							</button>
+							<GenreButton genre={book.genre} />
 							<EllipsisText
 								className="bookListItemAuthor text-secondary"
 								text={book.author}
