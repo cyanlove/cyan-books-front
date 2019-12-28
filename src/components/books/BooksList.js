@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./css/booksList.css";
 import EllipsisText from "react-ellipsis-text";
+import { Link } from "react-router-dom";
 
 const BooksList = ({ books }) => {
 	return (
@@ -19,9 +20,9 @@ const BooksList = ({ books }) => {
 									backgroundImage: `url(${book.cover})`
 								}}
 							></div>
-							<a
+							<Link
 								className="bookListItemTitle"
-								href={`/books/${book.slug}`}
+								to={`/books/${book.slug}`}
 							>
 								<EllipsisText
 									className="bookListItemAuthor"
@@ -29,7 +30,7 @@ const BooksList = ({ books }) => {
 									text={book.title}
 									tooltip={book.title}
 								/>
-							</a>
+							</Link>
 							<button
 								type="button"
 								className={`btn btn-outline-primary btn-sm bookListItemGenre genreColor${book.genre.replace(
