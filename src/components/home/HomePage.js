@@ -9,7 +9,7 @@ const HomePage = ({ books, loadBooks }) => {
 	useEffect(() => {
 		if (
 			books.length === 0 &&
-			document.querySelector("#searchBox").value.length === 0
+			document.querySelector("#searchBoxInput").value.length === 0
 		) {
 			loadBooks();
 		}

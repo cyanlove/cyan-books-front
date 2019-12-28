@@ -1,0 +1,13 @@
+#searchBox button {
+	border-color: var(--auxiliar-grey);
+	color: var(--hard-grey);
+}
+
+#searchBox button#searchBoxTriggerBtn:hover {
+	color: white;
+}
+
+#searchBox button#searchBoxClearBtn:hover {
+	background-color: rgba(0, 0, 0, 0);
+	color: var(--hard-grey);
+}

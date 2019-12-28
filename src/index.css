@@ -2,6 +2,9 @@
 	--main-link: rgb(0, 180, 180);
 	--main-sectionTitle: rgb(0, 180, 180);
 
+	--auxiliar-grey: rgb(206, 212, 218);
+	--hard-grey: rgb(108, 117, 125);
+
 	/*genre colors*/
 	--genre-children: rgb(255, 163, 88);
 	--genre-biography: rgb(161, 221, 82);
@@ -29,4 +32,24 @@ a {
 	max-width: 750px;
 	min-width: 450px;
 	margin: auto;
+}
+
+/* remove outlines from bootstrap*/
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+[type="text"].form-control:focus,
+[type="password"].form-control:focus,
+[type="email"].form-control:focus,
+[type="tel"].form-control:focus,
+.btn-outline-primary:focus,
+.btn-outline-secondary:focus,
+[contenteditable].form-control:focus {
+	border-color: var(--auxiliar-grey) !important;
+	outline: 0 !important;
+	box-shadow: 0 0 0 !important;
 }

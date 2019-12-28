@@ -7,7 +7,7 @@ const GenreButton = ({ genre, applyFilter }) => {
 	const handleGenreClick = e => {
 		applyFilter(e.target.value);
 
-		const searchBox = document.querySelector("#searchBox");
+		const searchBox = document.querySelector("#searchBoxInput");
 		searchBox.value = `genre:${e.target.value}`;
 	};
 
