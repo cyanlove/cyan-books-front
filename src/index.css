@@ -19,6 +19,10 @@
 	/*------------*/
 }
 
+body::-webkit-scrollbar {
+	width: 0;
+}
+
 .sectionTitle {
 	text-align: center;
 	color: var(--main-sectionTitle);
