@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import * as bookActions from "../../redux/actions/bookActions";
 import "./css/searchBox.css";
 
-const SearchBox = ({ initFilter = "", applyFilter }) => {
+const SearchBox = ({ initFilter = "", applyFilter, books }) => {
 	let [filter, setFilter] = useState(initFilter);
 
 	const handleSearchChange = e => {
@@ -29,7 +29,7 @@ const SearchBox = ({ initFilter = "", applyFilter }) => {
 
 	const handleClearClick = () => {
 		setFilter("");
-		applyFilter("");
+		applyFilter("", books);
 
 		document.querySelector("#searchBoxInput").focus();
 		document
@@ -75,12 +75,14 @@ const SearchBox = ({ initFilter = "", applyFilter }) => {
 
 SearchBox.propTypes = {
 	applyFilter: PropTypes.func.isRequired,
-	initFilter: PropTypes.string
+	initFilter: PropTypes.string,
+	books: PropTypes.array.isRequired
 };
 
 function mapStatetoProps(state /* ownProps*/) {
 	return {
-		initFilter: state.filter
+		initFilter: state.filter.config,
+		books: state.books
 	};
 }
 

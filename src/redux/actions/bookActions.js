@@ -7,8 +7,8 @@ export function addBookSuccess(book) {
 export function loadBooksSuccess(books) {
 	return { type: types.LOAD_BOOKS_SUCCESS, books };
 }
-export function filterByAll(match) {
-	return { type: types.FILTER_BOOKS, match };
+export function filterByAll(match, books) {
+	return { type: types.FILTER_BOOKS, match, books };
 }
 export function filterByTitle(match) {
 	return { type: types.FILTER_BOOKS_BY_TITLE, match };
@@ -22,8 +22,13 @@ export function filterByGenre(match) {
 export function filterByISBN(match) {
 	return { type: types.FILTER_BOOKS_BY_ISBN, match };
 }
+export function setFilter(filter) {
+	return { type: types.SET_FILTER, filter };
+}
 
-export function applyFilter(filter) {
+export function applyFilter(filter, books) {
+	setFilter(filter);
+
 	const i = filter.indexOf(":");
 	const field = i >= 0 && filter.slice(0, i);
 
@@ -33,15 +38,15 @@ export function applyFilter(filter) {
 
 	switch (field) {
 		case "title":
-			return filterByTitle(match);
+			return filterByTitle(match, books);
 		case "author":
-			return filterByAuthor(match);
+			return filterByAuthor(match, books);
 		case "genre":
-			return filterByGenre(match);
+			return filterByGenre(match, books);
 		case "isbn":
-			return filterByISBN(match);
+			return filterByISBN(match, books);
 		default:
-			return filterByAll(filter);
+			return filterByAll(filter, books);
 	}
 }
 
