@@ -8,14 +8,12 @@ import * as bookActions from "../../redux/actions/bookActions";
 import "./css/booksList.css";
 
 const BooksList = ({ books, loadBooks, filter }) => {
-	const [filteredBooks, setFilteredBooks] = useState([]);
+	let filteredBooks = books.filter(book => filter.result.includes(book.id));
 
 	useEffect(() => {
 		if (books.length === 0 && filter.config === "") {
 			loadBooks();
 		}
-
-		setFilteredBooks(books.filter(book => filter.result.includes(book.id)));
 	});
 
 	return (
@@ -51,13 +49,13 @@ const BooksList = ({ books, loadBooks, filter }) => {
 BooksList.propTypes = {
 	books: PropTypes.array.isRequired,
 	loadBooks: PropTypes.func.isRequired,
-	filter: PropTypes.string.isRequired
+	filter: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state /*, ownProps */) {
 	return {
 		books: state.books,
-		filter: state.filter.config
+		filter: state.filter
 	};
 }
 const mapDispatchToProps = {

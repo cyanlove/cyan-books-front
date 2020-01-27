@@ -12,7 +12,7 @@ const SearchBox = ({ initFilter = "", applyFilter, books }) => {
 	const handleSearchChange = e => {
 		handleSearchFocus(e);
 		setFilter(e.target.value);
-		applyFilter(e.target.value);
+		applyFilter(e.target.value, books);
 	};
 
 	const handleSearchFocus = e => {

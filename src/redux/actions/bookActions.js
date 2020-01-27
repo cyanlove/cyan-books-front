@@ -32,7 +32,7 @@ export function applyFilter(filter, books) {
 	const i = filter.indexOf(":");
 	const field = i >= 0 && filter.slice(0, i);
 
-	if (!field) return filterByAll(filter);
+	if (!field) return filterByAll(filter, books);
 
 	const match = filter.slice(i + 1);
 
@@ -56,6 +56,7 @@ export function loadBooks() {
 			.getBooks()
 			.then(books => {
 				dispatch(loadBooksSuccess(books));
+				dispatch(filterByAll("", books));
 			})
 			.catch(e => {
 				//we could dispatch one other appropiate action to let the app know the request failed... but for now... lets keep it this easier way :)
