@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import * as bookActions from "../../redux/actions/bookActions";
+import * as filterActions from "../../redux/actions/filterActions";
 import "./css/searchBox.css";
 
-const SearchBox = ({ initFilter = "", applyFilter, books }) => {
-	let [filter, setFilter] = useState(initFilter);
-
+const SearchBox = ({ filter = "", applyFilter, setFilter, books }) => {
 	const handleSearchChange = e => {
 		handleSearchFocus(e);
 		setFilter(e.target.value);
@@ -75,19 +73,21 @@ const SearchBox = ({ initFilter = "", applyFilter, books }) => {
 
 SearchBox.propTypes = {
 	applyFilter: PropTypes.func.isRequired,
-	initFilter: PropTypes.string,
-	books: PropTypes.array.isRequired
+	filter: PropTypes.string,
+	books: PropTypes.array.isRequired,
+	setFilter: PropTypes.func.isRequired
 };
 
 function mapStatetoProps(state /* ownProps*/) {
 	return {
-		initFilter: state.filter.config,
+		filter: state.filter.config,
 		books: state.books
 	};
 }
 
 const mapDispatchToProps = {
-	applyFilter: bookActions.applyFilter
+	applyFilter: filterActions.applyFilter,
+	setFilter: filterActions.setFilter
 };
 
 export default connect(mapStatetoProps, mapDispatchToProps)(SearchBox);
