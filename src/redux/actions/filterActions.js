@@ -16,12 +16,14 @@ export function filterByISBN(match, books) {
 	return { type: types.FILTER_BOOKS_BY_ISBN, match, books };
 }
 export function setFilter(filter) {
+	console.log("setFilter", filter);
+	debugger;
 	return { type: types.SET_FILTER, filter };
 }
 
 export function applyFilter(filter, books) {
 	setFilter(filter);
-
+	console.log("applyFilter", filter);
 	const i = filter.indexOf(":");
 	const field = i >= 0 && filter.slice(0, i);
 
