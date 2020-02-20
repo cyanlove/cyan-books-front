@@ -1,10 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
+import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as filterActions from "../../redux/actions/filterActions";
-import SearchConfig from "./searchConfig/SearchConfig";
+import SearchConfig from "./searchSettings/SearchSettings";
 import "./css/searchBox.css";
 
 const SearchBox = ({ filter = "", applyFilter, books }) => {
@@ -36,8 +38,17 @@ const SearchBox = ({ filter = "", applyFilter, books }) => {
 	};
 
 	return (
-		<div className="input-group mb-3" id="searchBox">
-			<SearchConfig />
+
+		<InputGroup className="mb-3" id="searchBox">
+			<SearchConfig option={}/>
+			<FormControl
+				placeholder="search books..."
+				aria-label="search books..."
+				id="searchBoxInput"
+				value={filter}
+				onChange={handleSearchChange}
+				onFocus={handleSearchFocus}
+			/>
 			<input
 				type="text"
 				id="searchBoxInput"
@@ -70,7 +81,7 @@ const SearchBox = ({ filter = "", applyFilter, books }) => {
 					<FontAwesomeIcon icon={faSearch} />
 				</button>
 			</div>
-		</div>
+		</InputGroup>
 	);
 };
 
