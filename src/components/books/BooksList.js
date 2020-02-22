@@ -11,7 +11,7 @@ const BooksList = ({ books, loadBooks, filter }) => {
 	let filteredBooks = books.filter(book => filter.result.includes(book.id));
 
 	useEffect(() => {
-		if (books.length === 0 && filter.config === "") {
+		if (books.length === 0 && filter.option === "") {
 			loadBooks();
 		}
 	});
