@@ -9,11 +9,10 @@ import * as filterActions from "../../redux/actions/filterActions";
 import SearchSettings from "./searchSettings/SearchSettings";
 import "./css/searchBox.css";
 
-const SearchBox = ({ filter = "", applyFilter, books }) => {
-	console.log("filter", filter);
+const SearchBox = ({ filterSettings = "", value = "", applyFilter, books }) => {
 	const handleSearchChange = e => {
 		handleSearchFocus(e);
-		applyFilter(e.target.value, books);
+		applyFilter({ input: e.target.value, settings: filterSettings }, books);
 	};
 
 	const handleSearchFocus = e => {
@@ -29,7 +28,7 @@ const SearchBox = ({ filter = "", applyFilter, books }) => {
 	};
 
 	const handleClearClick = () => {
-		applyFilter("", books);
+		applyFilter({ input: "", settings: filterSettings }, books);
 
 		//document.querySelector("#searchBoxInput").focus();
 		/* document
@@ -37,14 +36,22 @@ const SearchBox = ({ filter = "", applyFilter, books }) => {
 			.children[0].classList.add("invisible"); */
 	};
 
+	const onSettingsSelect = selected => {
+		filterSettings = selected;
+	};
+
 	return (
 		<InputGroup className="mb-3" id="searchBox">
-			<SearchSettings />
+			<SearchSettings
+				options={["1", "2", "3", "4"]}
+				selected={null}
+				handleSelect={onSettingsSelect}
+			/>
 			<FormControl
 				placeholder="search books..."
 				aria-label="search books..."
 				id="searchBoxInput"
-				value={filter}
+				value={value}
 				onChange={handleSearchChange}
 				onFocus={handleSearchFocus}
 			/>
@@ -76,15 +83,17 @@ const SearchBox = ({ filter = "", applyFilter, books }) => {
 
 SearchBox.propTypes = {
 	applyFilter: PropTypes.func.isRequired,
-	filter: PropTypes.string,
+	filterSettings: PropTypes.string,
+	value: PropTypes.string,
 	books: PropTypes.array.isRequired
 };
 
 function mapStatetoProps(state /* ownProps*/) {
-	console.log("mapStatetoProps", "filter: " + state.filter.config);
+	console.log("mapStatetoProps", "filter: " + state.filter.input);
 	return {
-		filter: state.filter.config,
-		books: state.books
+		value: state.filter.input,
+		books: state.books,
+		filterSettings: state.filter.settings
 	};
 }
 

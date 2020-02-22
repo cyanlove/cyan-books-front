@@ -1,8 +1,9 @@
 const initialState = {
 	books: [],
 	filter: {
-		config: "",
-		result: []
+		input: "",
+		result: [],
+		settings: ["title", "author", "genre", "isbn"]
 	}
 };
 
