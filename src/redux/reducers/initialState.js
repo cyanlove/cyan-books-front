@@ -3,7 +3,8 @@ const initialState = {
 	filter: {
 		input: "",
 		result: [],
-		settings: ["title", "author", "genre", "isbn"]
+		settings: ["title", "author", "genre", "isbn"],
+		option: ""
 	}
 };
 

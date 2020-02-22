@@ -5,17 +5,11 @@ import initialState from "./initialState";
 export default function filterReducer(state = initialState.filter, action) {
 	//debugger;
 	switch (action.type) {
-		case types.SET_FILTER:
-			return {
-				...state,
-				input: action.filter.input,
-				settings: action.filter.settings
-			};
 		case types.FILTER_BOOKS:
 			return {
 				...state,
 				input: action.filter.input,
-				settings: action.filter.settings,
+				option: action.filter.option,
 				result: action.books
 					.filter(
 						book =>
@@ -30,7 +24,7 @@ export default function filterReducer(state = initialState.filter, action) {
 			return {
 				...state,
 				input: action.filter.input,
-				settings: action.filter.settings,
+				option: action.filter.option,
 				result: action.books
 					.filter(book => matchTwoStrings(book.title, action.filter.input))
 					.map(book => book.id)
@@ -39,7 +33,7 @@ export default function filterReducer(state = initialState.filter, action) {
 			return {
 				...state,
 				input: action.filter.input,
-				settings: action.filter.settings,
+				option: action.filter.option,
 				result: action.books
 					.filter(book => matchTwoStrings(book.author, action.filter.input))
 					.map(book => book.id)
@@ -48,7 +42,7 @@ export default function filterReducer(state = initialState.filter, action) {
 			return {
 				...state,
 				input: action.filter.input,
-				settings: action.filter.settings,
+				option: action.filter.option,
 				result: action.books
 					.filter(book => matchTwoStrings(book.genre, action.filter.input))
 					.map(book => book.id)
@@ -57,7 +51,7 @@ export default function filterReducer(state = initialState.filter, action) {
 			return {
 				...state,
 				input: action.filter.input,
-				settings: action.filter.settings,
+				option: action.filter.option,
 				result: action.books
 					.filter(book => matchTwoStrings(book.id, action.filter.input))
 					.map(book => book.id)

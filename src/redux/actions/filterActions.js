@@ -15,16 +15,11 @@ export function filterByGenre(filter, books) {
 export function filterByISBN(filter, books) {
 	return { type: types.FILTER_BOOKS_BY_ISBN, filter, books };
 }
-export function setFilter(filter) {
-	console.log("setFilter", filter);
-	debugger;
-	return { type: types.SET_FILTER, filter };
-}
 
 export function applyFilter(filter, books) {
 	console.log("applyFilter", filter);
 
-	switch (filter.settings) {
+	switch (filter.option) {
 		case "title":
 			return filterByTitle(filter, books);
 		case "author":

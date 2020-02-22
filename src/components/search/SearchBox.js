@@ -9,10 +9,16 @@ import * as filterActions from "../../redux/actions/filterActions";
 import SearchSettings from "./searchSettings/SearchSettings";
 import "./css/searchBox.css";
 
-const SearchBox = ({ filterSettings = "", value = "", applyFilter, books }) => {
+const SearchBox = ({
+	filterSettings,
+	filterOption,
+	value = "",
+	applyFilter,
+	books
+}) => {
 	const handleSearchChange = e => {
 		handleSearchFocus(e);
-		applyFilter({ input: e.target.value, settings: filterSettings }, books);
+		applyFilter({ input: e.target.value, option: filterOption }, books);
 	};
 
 	const handleSearchFocus = e => {
@@ -28,7 +34,7 @@ const SearchBox = ({ filterSettings = "", value = "", applyFilter, books }) => {
 	};
 
 	const handleClearClick = () => {
-		applyFilter({ input: "", settings: filterSettings }, books);
+		applyFilter({ input: "", option: filterOption }, books);
 
 		//document.querySelector("#searchBoxInput").focus();
 		/* document
@@ -37,14 +43,14 @@ const SearchBox = ({ filterSettings = "", value = "", applyFilter, books }) => {
 	};
 
 	const onSettingsSelect = selected => {
-		filterSettings = selected;
+		applyFilter({ option: selected, input: value }, books);
 	};
 
 	return (
 		<InputGroup className="mb-3" id="searchBox">
 			<SearchSettings
-				options={["1", "2", "3", "4"]}
-				selected={null}
+				options={filterSettings}
+				selected={filterOption}
 				handleSelect={onSettingsSelect}
 			/>
 			<FormControl
@@ -83,17 +89,19 @@ const SearchBox = ({ filterSettings = "", value = "", applyFilter, books }) => {
 
 SearchBox.propTypes = {
 	applyFilter: PropTypes.func.isRequired,
-	filterSettings: PropTypes.string,
+	filterSettings: PropTypes.array.isRequired,
 	value: PropTypes.string,
+	filterOption: PropTypes.string.isRequired,
 	books: PropTypes.array.isRequired
 };
 
 function mapStatetoProps(state /* ownProps*/) {
-	console.log("mapStatetoProps", "filter: " + state.filter.input);
+	console.log("mapStatetoProps", state.filter);
 	return {
 		value: state.filter.input,
 		books: state.books,
-		filterSettings: state.filter.settings
+		filterSettings: state.filter.settings,
+		filterOption: state.filter.option
 	};
 }
 

@@ -19,7 +19,9 @@ const SearchSettings = ({ options, selected, handleSelect }) => {
 				</Dropdown.Item>
 			))}
 			<Dropdown.Divider />
-			<Dropdown.Item href="#">{ALL}</Dropdown.Item>
+			<Dropdown.Item href="#" onClick={() => handleSelect(ALL)}>
+				{ALL}
+			</Dropdown.Item>
 		</DropdownButton>
 	);
 };
