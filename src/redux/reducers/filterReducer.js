@@ -3,7 +3,6 @@ import { matchTwoStrings } from "../../../tools/cyanUtils";
 import initialState from "./initialState";
 
 export default function filterReducer(state = initialState.filter, action) {
-	//debugger;
 	switch (action.type) {
 		case types.FILTER_BOOKS:
 			return {

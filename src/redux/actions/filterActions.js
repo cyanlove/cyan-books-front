@@ -17,8 +17,6 @@ export function filterByISBN(filter, books) {
 }
 
 export function applyFilter(filter, books) {
-	console.log("applyFilter", filter);
-
 	switch (filter.option) {
 		case "title":
 			return filterByTitle(filter, books);

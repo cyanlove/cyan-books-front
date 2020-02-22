@@ -15,7 +15,7 @@ export function loadBooks() {
 			.getBooks()
 			.then(books => {
 				dispatch(loadBooksSuccess(books));
-				dispatch(filterByAll("", books));
+				dispatch(filterByAll({ input: "", option: "" }, books));
 			})
 			.catch(e => {
 				//we could dispatch one other appropiate action to let the app know the request failed... but for now... lets keep it this easier way :)
