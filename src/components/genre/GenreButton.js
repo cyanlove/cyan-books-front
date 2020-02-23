@@ -2,19 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as filterActions from "../../redux/actions/filterActions";
+import Button from "react-bootstrap/Button";
 
 const GenreButton = ({ genre, applyFilter, books }) => (
-	<button
-		type="button"
-		className={`btn btn-outline-primary btn-sm bookListItemGenre genreColor${genre.replace(
-			" ",
-			""
-		)}`}
+	<Button
+		variant="outline-primary"
+		size="sm"
+		className={`bookListItemGenre genreColor${genre.replace(" ", "")}`}
 		onClick={() => applyFilter({ option: "genre", input: genre }, books)}
-		value={genre}
 	>
 		{genre}
-	</button>
+	</Button>
 );
 
 GenreButton.propTypes = {
