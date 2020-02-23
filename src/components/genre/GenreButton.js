@@ -10,7 +10,7 @@ const GenreButton = ({ genre, applyFilter, books }) => (
 			" ",
 			""
 		)}`}
-		onClick={e => applyFilter({ option: genre, input: e.target.value }, books)}
+		onClick={() => applyFilter({ option: "genre", input: genre }, books)}
 		value={genre}
 	>
 		{genre}
