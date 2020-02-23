@@ -60,20 +60,21 @@ const SearchBox = ({
 				value={value}
 				onChange={handleSearchChange}
 				onFocus={handleSearchFocus}
+				className="border-right-0"
 			/>
-			{/* <div className="input-group-append">
-				<button
-					className="btn btn-outline-secondary border-left-0 border-right-0"
-					style={{ borderColor: "rgb(206, 212, 218)" }}
-					type="button"
-					id="searchBoxClearBtn"
-					onClick={handleClearClick}
-				>
-					{filter != "" && (
-						<FontAwesomeIcon icon={faTimes} className="invisible" />
-					)}
-				</button>
-			</div> */}
+			<div className="input-group-append">
+				{value != "" && (
+					<button
+						className="btn btn-outline-secondary border-left-0 border-right-0"
+						style={{ borderColor: "rgb(206, 212, 218)" }}
+						type="button"
+						id="searchBoxClearBtn"
+						onClick={handleClearClick}
+					>
+						<FontAwesomeIcon icon={faTimes} />
+					</button>
+				)}
+			</div>
 			<div className="input-group-append">
 				<button
 					className="btn btn-outline-secondary border-left-0"
