@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
+import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as filterActions from "../../redux/actions/filterActions";
@@ -64,25 +65,24 @@ const SearchBox = ({
 			/>
 			<div className="input-group-append">
 				{value != "" && (
-					<button
-						className="btn btn-outline-secondary border-left-0 border-right-0"
-						style={{ borderColor: "rgb(206, 212, 218)" }}
-						type="button"
+					<Button
+						variant="outline-secondary"
 						id="searchBoxClearBtn"
+						className="border-left-0 border-right-0"
 						onClick={handleClearClick}
 					>
 						<FontAwesomeIcon icon={faTimes} />
-					</button>
+					</Button>
 				)}
 			</div>
 			<div className="input-group-append">
-				<button
-					className="btn btn-outline-secondary border-left-0"
-					type="button"
+				<Button
+					variant="outline-secondary"
 					id="searchBoxTriggerBtn"
+					className="border-left-0"
 				>
 					<FontAwesomeIcon icon={faSearch} />
-				</button>
+				</Button>
 			</div>
 		</InputGroup>
 	);
